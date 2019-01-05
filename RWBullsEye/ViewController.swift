@@ -8,6 +8,13 @@
 
 import UIKit
 
+extension UIAlertAction {
+    
+    func completer() {
+        print("action \(self.title!) chosen and alert dimissed")
+    }
+}
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -16,7 +23,36 @@ class ViewController: UIViewController {
     }
     
     @IBAction func showAlert() {
+        let alert = UIAlertController(title: "Hello... World...", message: "This is hardly my first app!", preferredStyle: .alert)
         
+        let doAction = UIAlertAction(title: "Do", style: .default) { action in
+            action.completer()
+        }
+        
+        let dontAction = UIAlertAction(title: "Don't", style: .cancel) { action in
+            action.completer()
+        }
+        
+        let redAlertAction = UIAlertAction(title: "Red Alert", style: .destructive) { action in
+            action.completer()
+        }
+
+        let maybeAction = UIAlertAction(title: "Maybe", style: .default) { action in
+            action.completer()
+        }
+        
+        alert.addAction(redAlertAction)
+        alert.addAction(doAction)
+        alert.addAction(maybeAction)
+        alert.addAction(dontAction)
+
+        present(alert, animated: true) {
+            print("alert was presented and is currently hanging out on the screen!")
+        }
+        
+        // What did we learn about UIAlertControllers and UIAlertActions?
+        // - The present() completion block is executed before the UIAlertAction() handlers
+        // - Any action styled .cancel wants to be the last option!
     }
 }
 
