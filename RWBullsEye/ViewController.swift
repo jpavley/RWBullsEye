@@ -17,49 +17,45 @@ extension UIAlertAction {
 
 class ViewController: UIViewController {
     
-    var currentValue: Int = 0
+    @IBOutlet weak var slider: UISlider!
+    @IBOutlet weak var tragetLabel: UILabel!
+    
+    var currentValue = 0
+    var targetValue = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        startNewRound()
     }
     
     @IBAction func showAlert() {
-        let alert = UIAlertController(title: "Hello... World...", message: "This is hardly my first app!", preferredStyle: .alert)
+        
+        let message = "The value of the slider is \(currentValue)" + "\nThe target value is: \(targetValue)"
+        
+        let alert = UIAlertController(title: "Hello... World...", message: message, preferredStyle: .alert)
         
         let doAction = UIAlertAction(title: "Do", style: .default) { action in
-            action.completer()
+            self.startNewRound()
         }
         
-        let dontAction = UIAlertAction(title: "Don't", style: .cancel) { action in
-            action.completer()
-        }
-        
-        let redAlertAction = UIAlertAction(title: "Red Alert", style: .destructive) { action in
-            action.completer()
-        }
-
-        let maybeAction = UIAlertAction(title: "Maybe", style: .default) { action in
-            action.completer()
-        }
-        
-        alert.addAction(redAlertAction)
         alert.addAction(doAction)
-        alert.addAction(maybeAction)
-        alert.addAction(dontAction)
-
-        present(alert, animated: true) {
-            print("alert was presented and is currently hanging out on the screen!")
-        }
+        present(alert, animated: true)
         
-        // What did we learn about UIAlertControllers and UIAlertActions?
-        // - The present() completion block is executed before the UIAlertAction() handlers
-        // - Any action styled .cancel wants to be the last option!
     }
     
     @IBAction func sliderMoved(_ slider: UISlider) {
         currentValue = lroundf(slider.value)
         print("the value of the slider is now: \(currentValue)")
+    }
+    
+    func startNewRound() {
+        targetValue = Int.random(in: 1...100)
+        currentValue = 50
+        slider.value = Float(currentValue)
+    }
+    
+    func updateLabels() {
+        tragetLabel.text = "\(targetValue)"
     }
 }
 
