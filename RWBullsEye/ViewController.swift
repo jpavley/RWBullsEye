@@ -18,7 +18,7 @@ extension UIAlertAction {
 class ViewController: UIViewController {
     
     @IBOutlet weak var slider: UISlider!
-    @IBOutlet weak var tragetLabel: UILabel!
+    @IBOutlet weak var targetLabel: UILabel!
     
     var currentValue = 0
     var targetValue = 0
@@ -55,7 +55,7 @@ class ViewController: UIViewController {
     }
     
     func updateLabels() {
-        tragetLabel.text = "\(targetValue)"
+        targetLabel.text = "\(targetValue)"
     }
 }
 
