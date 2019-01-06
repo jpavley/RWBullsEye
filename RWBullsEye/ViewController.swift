@@ -54,5 +54,9 @@ class ViewController: UIViewController {
         // - The present() completion block is executed before the UIAlertAction() handlers
         // - Any action styled .cancel wants to be the last option!
     }
+    
+    @IBAction func sliderMoved(_ slider: UISlider) {
+        print("the value of the slider is now: \(slider.value)")
+    }
 }
 
