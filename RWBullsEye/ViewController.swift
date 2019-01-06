@@ -16,6 +16,8 @@ extension UIAlertAction {
 }
 
 class ViewController: UIViewController {
+    
+    var currentValue: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,7 +58,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func sliderMoved(_ slider: UISlider) {
-        print("the value of the slider is now: \(slider.value)")
+        currentValue = lroundf(slider.value)
+        print("the value of the slider is now: \(currentValue)")
     }
 }
 
