@@ -28,22 +28,25 @@ class ViewController: UIViewController {
     @IBAction func showAlert() {
         
         let difference = abs(targetValue - currentValue)
-        let points = 100 - difference
-        score += points
+        var points = 100 - difference
         
         let titles = ["Hot", "Warm", "Cool", "Cold"]
-        var title = ""
+        let title: String
         
         switch difference {
         case 0:
             title = titles[0]
+            points += 100
         case 1..<5:
             title = titles[1]
+            points += 50
         case 6..<10:
             title = titles[2]
         default:
             title = titles[3]
         }
+        
+        score += points
         
         let message = "You scored \(points) points!"
         
