@@ -31,9 +31,23 @@ class ViewController: UIViewController {
         let points = 100 - difference
         score += points
         
+        let titles = ["Hot", "Warm", "Cool", "Cold"]
+        var title = ""
+        
+        switch difference {
+        case 0:
+            title = titles[0]
+        case 1..<5:
+            title = titles[1]
+        case 6..<10:
+            title = titles[2]
+        default:
+            title = titles[3]
+        }
+        
         let message = "You scored \(points) points!"
         
-        let alert = UIAlertController(title: "Hello... World...", message: message, preferredStyle: .alert)
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         let doAction = UIAlertAction(title: "Do", style: .default) { action in
             self.startNewRound()
