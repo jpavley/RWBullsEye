@@ -52,7 +52,7 @@ class ViewController: UIViewController {
         
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
-        let doAction = UIAlertAction(title: "Do", style: .default) { action in
+        let doAction = UIAlertAction(title: "Do", style: .default) { _ in
             self.startNewRound()
         }
         
