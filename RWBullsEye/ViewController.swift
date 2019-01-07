@@ -45,13 +45,13 @@ class ViewController: UIViewController {
     
     @IBAction func sliderMoved(_ slider: UISlider) {
         currentValue = lroundf(slider.value)
-        print("the value of the slider is now: \(currentValue)")
     }
     
     func startNewRound() {
         targetValue = Int.random(in: 1...100)
         currentValue = 50
         slider.value = Float(currentValue)
+        updateLabels()
     }
     
     func updateLabels() {
