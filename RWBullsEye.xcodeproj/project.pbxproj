@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B82CACC621E8016C002EFE06 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82CACC521E8016C002EFE06 /* AboutViewController.swift */; };
 		B8FBA7CF21E1288C0059C44E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FBA7CE21E1288C0059C44E /* AppDelegate.swift */; };
 		B8FBA7D121E1288C0059C44E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FBA7D021E1288C0059C44E /* ViewController.swift */; };
 		B8FBA7D421E1288C0059C44E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8FBA7D221E1288C0059C44E /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B82CACC521E8016C002EFE06 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		B8FBA7CB21E1288C0059C44E /* RWBullsEye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RWBullsEye.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8FBA7CE21E1288C0059C44E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8FBA7D021E1288C0059C44E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				B8FBA7D521E1288D0059C44E /* Assets.xcassets */,
 				B8FBA7D721E1288D0059C44E /* LaunchScreen.storyboard */,
 				B8FBA7DA21E1288D0059C44E /* Info.plist */,
+				B82CACC521E8016C002EFE06 /* AboutViewController.swift */,
 			);
 			path = RWBullsEye;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B82CACC621E8016C002EFE06 /* AboutViewController.swift in Sources */,
 				B8FBA7D121E1288C0059C44E /* ViewController.swift in Sources */,
 				B8FBA7CF21E1288C0059C44E /* AppDelegate.swift in Sources */,
 			);
