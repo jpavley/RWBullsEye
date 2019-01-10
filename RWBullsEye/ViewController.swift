@@ -14,15 +14,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var targetLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var roundLabel: UILabel!
-
+    @IBOutlet weak var targetMarkImage: UIImageView!
+    
     var currentValue = 0
     var targetValue = 0
     var score = 0
     var round = 0
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    
+    func styleSlider() {
         let thumbImageNormal = UIImage(named: "SliderThumb-Normal")!
         slider.setThumbImage(thumbImageNormal, for: .normal)
         
@@ -39,11 +38,42 @@ class ViewController: UIViewController {
         let trackRightImage = UIImage(named: "SliderTrackRight")!
         let trackRightResizable = trackRightImage.resizableImage(withCapInsets: insets)
         slider.setMaximumTrackImage(trackRightResizable, for: .normal)
-        
+    }
+    
+    func resetTargetMark() {
+        targetMarkImage.alpha = 0
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        styleSlider()
+        resetTargetMark()
         startNewGame()
     }
     
+    func updateTargetMark() {
+        let minX = slider.frame.minX
+        let range = slider.frame.size.width
+        let position = range * (CGFloat(targetValue) * 0.01)
+        targetMarkImage.center.x = position + minX
+        showTargetMark()
+    }
+    
+    func hideTargetMark() {
+        UIView.animate(withDuration: 2.0) {
+            self.targetMarkImage.alpha = 0.0
+        }
+    }
+    
+    func showTargetMark() {
+        UIView.animate(withDuration: 2.0) {
+            self.targetMarkImage.alpha = 1.0
+        }
+    }
+    
     @IBAction func showAlert() {
+        
+        updateTargetMark()
         
         let difference = abs(targetValue - currentValue)
         var points = 100 - difference
@@ -72,6 +102,7 @@ class ViewController: UIViewController {
         
         let doAction = UIAlertAction(title: "Do", style: .default) { _ in
             self.startNewRound()
+            self.hideTargetMark()
         }
         
         alert.addAction(doAction)

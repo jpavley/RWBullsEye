@@ -144,6 +144,7 @@
                         <outlet property="scoreLabel" destination="dq4-bz-pz2" id="2hV-Ey-ZOl"/>
                         <outlet property="slider" destination="2vl-dA-UpK" id="guC-zb-Tpz"/>
                         <outlet property="targetLabel" destination="HPb-sJ-D5o" id="DJf-RX-SSK"/>
+                        <outlet property="targetMarkImage" destination="Vyh-hZ-py4" id="s0L-MU-GGt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
