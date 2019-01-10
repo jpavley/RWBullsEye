@@ -115,6 +115,14 @@ class ViewController: UIViewController {
     }
     
     @IBAction func startNewGame() {
+        
+        let transition = CATransition()
+        transition.type = CATransitionType.fade
+        transition.duration = 1
+        transition.timingFunction = CAMediaTimingFunction(name:
+            CAMediaTimingFunctionName.easeOut)
+        view.layer.add(transition, forKey: nil)
+        
         score = 0
         round = 0
         startNewRound()
